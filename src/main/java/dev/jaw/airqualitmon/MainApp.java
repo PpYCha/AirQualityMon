@@ -1,5 +1,6 @@
-package com.mycompany.airqualitmon;
+package dev.jaw.airqualitmon;
 
+import dev.jaw.airqualitmon.shell.ShellView;
 import javafx.application.Application;
 import static javafx.application.Application.launch;
 import javafx.fxml.FXMLLoader;
@@ -12,12 +13,10 @@ public class MainApp extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/fxml/login.fxml"));
-        
-        Scene scene = new Scene(root);
-        scene.getStylesheets().add("/styles/Styles.css");
-        
-        stage.setTitle("Please Login");
+        //Parent root = FXMLLoader.load(getClass().getResource("/fxml/login.fxml"));
+        ShellView mainView = new ShellView();
+        Scene scene = new Scene(mainView.getView());
+        stage.setTitle("AirQ-monitor");
         stage.setScene(scene);
         stage.show();
     }
